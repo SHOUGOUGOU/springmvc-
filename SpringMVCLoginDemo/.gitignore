@@ -1,8 +1,11 @@
 /bin/
+target/
+.idea
+*.iml
 
-/target/ 
 .classpath
 .project
 .settings 
 .springBeans
 .tern-project
+
