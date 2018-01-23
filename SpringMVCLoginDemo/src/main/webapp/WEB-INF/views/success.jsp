@@ -6,8 +6,8 @@
 <title>结果</title>
 </head>
 <body>
-<h2>欢迎:${username } </h2> 
-<h2>欢迎您,${sessionScope.username }</h2>  
+<h2>欢迎:${user.username } </h2>
+<h2>欢迎您,${sessionScope.user.username }</h2>
 <a href="test">跳转</a>
 </body>
 </html>
