@@ -2,6 +2,7 @@ package sunda.interceptor;
 
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
+import sunda.logindemo.User;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -13,10 +14,10 @@ public class LoginInterceptor implements HandlerInterceptor {
   @Override
   public boolean preHandle(HttpServletRequest request, HttpServletResponse response,
           Object handler) throws Exception {
-	  Object user = request.getSession().getAttribute("user");
-      if (user == null) {
+	  User user = (User) request.getSession().getAttribute("user");
+      if (user.getUsername() == null) {
           System.out.println("尚未登录，调到登录页面");
-          request.getRequestDispatcher("/WEB-INF/views/login.jsp").forward(request,response);
+          request.getRequestDispatcher("/").forward(request,response);
           return false;
       }
 

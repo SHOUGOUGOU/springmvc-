@@ -16,7 +16,7 @@ public class HomeController {
 
     @ModelAttribute("user")
     public User initUser() {
-        return new User("guest", "guest");
+        return new User();
     }
 
     @InitBinder("user")
